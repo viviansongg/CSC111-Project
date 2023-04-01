@@ -83,11 +83,11 @@ tk.Radiobutton(frame1, text='Skip', variable=choice_q_2, value='Skip').pack(anch
 def choices_q_2(answer: str) -> int:
     """Takes the string value for the choice the user made and turns it into a unique integer."""
     if answer == '< 1h 40 min':
-        return 13
+        return 100
     elif answer == '>= 1h 40 min':
-        return 14
+        return 200
     else:
-        return 15
+        return 300
 
 # Question 3:
 choice_q_3 = StringVar()
@@ -101,13 +101,13 @@ tk.Radiobutton(frame1, text='Skip', variable=choice_q_3, value='Skip').pack(anch
 def choices_q_3(answer: str) -> int:
     """Takes the string value for the choice the user made and turns it into a unique integer."""
     if answer == 'High: 8-10':
-        return 16
+        return 1000
     elif answer == 'Mediocre: 5-7.9':
-        return 17
+        return 2000
     elif answer == 'Low: 1-4.9':
-        return 18
+        return 3000
     else:
-        return 19
+        return 4000
 
 # Question 4
 choice_q_4 = StringVar()
@@ -121,11 +121,11 @@ tk.Radiobutton(frame1, text='Skip', variable=choice_q_4, value='Skip').pack(anch
 def choices_q_4(answer: str) -> int:
     """Takes the string value for the choice the user made and turns it into a unique integer."""
     if answer == 'English':
-        return 20
+        return 10000
     elif answer == 'Another Language':
-        return 21
+        return 20000
     else:
-        return 22
+        return 30000
 
 # Question 5
 choice_q_5 = StringVar()
@@ -139,13 +139,13 @@ tk.Radiobutton(frame1, text='Skip', variable=choice_q_5, value='Skip').pack(anch
 def choices_q_5(answer: str) -> int:
     """Takes the string value for the choice the user made and turns it into a unique integer."""
     if answer == '>=2021':
-        return 23
+        return 100000
     elif answer == '2016-2020':
-        return 24
+        return 200000
     elif answer =='<2016':
-        return 25
+        return 300000
     else:
-        return 26
+        return 400000
 
 def clicked():
     """When the done button is clicked switch the text to loading."""
