@@ -1,9 +1,6 @@
 import tkinter as tk
 from tkinter import *
 
-# accumulates user choices for putting scores in a dictionary
-user_choices = []
-
 # creates main root window
 main = tk.Tk()
 main.geometry('500x700')
@@ -150,30 +147,10 @@ def choices_q_5(answer: str) -> int:
     else:
         return 400000
 
-# score dictionary changes
-      
-def score_calculator(user_answers: list) -> dict:
-    scores = {}
-    for i in range(0, len(user_answers)):
-        scores['q' + f'{i}'] = user_answers[i]
-    return scores
-  
-#--------------------------------
       
 def clicked():
     """When the done button is clicked switch the text to loading."""
     quit_when_done.config(text='LOADING...')
-    
-    # score dictionary changes
-    
-    user_choices.extend([choice_q_1(choice.get()), choices_q_2(choice_q_2.get()), choices_q_3(choice_q_3.get()),
-                         choices_q_4(choice_q_4.get()), choices_q_5(choice_q_5.get())])
-
-    score_dict = score_calculator(user_choices)
-
-    print(score_dict)
-    
-    #--------------------------------
     
     print([choice.get()] + [choice_q_2.get()] + [choice_q_3.get()] + [choice_q_4.get()]
           + [choice_q_5.get()])
