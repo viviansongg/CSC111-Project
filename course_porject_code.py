@@ -41,31 +41,31 @@ drop_box = OptionMenu(frame1, choice, *options)
 def choice_q_1(answer: str) -> int:
     """Takes the string value for the choice the user made and turns it into a unique integer."""
     if answer == 'Romance':
-        return 0
-    elif answer == 'Comedy':
         return 1
-    elif answer == 'Action':
+    elif answer == 'Comedy':
         return 2
-    elif answer == 'Horror':
+    elif answer == 'Action':
         return 3
-    elif answer == 'Thriller':
+    elif answer == 'Horror':
         return 4
-    elif answer == 'Adventure':
+    elif answer == 'Thriller':
         return 5
-    elif answer == 'Crime':
+    elif answer == 'Adventure':
         return 6
-    elif answer == 'Animation':
+    elif answer == 'Crime':
         return 7
-    elif answer == 'Science Fiction':
+    elif answer == 'Animation':
         return 8
-    elif answer == 'Family':
+    elif answer == 'Science Fiction':
         return 9
-    elif answer == 'Drama':
+    elif answer == 'Family':
         return 10
-    elif answer == 'Music':
+    elif answer == 'Drama':
         return 11
-    else:
+    elif answer == 'Music':
         return 12
+    else:
+        return 13
 
 drop_box.pack(anchor='w')
 
