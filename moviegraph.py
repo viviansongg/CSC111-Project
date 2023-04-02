@@ -67,6 +67,6 @@ def movienetworkcreate(net: MovieNetwork, characteristics: dict) -> MovieNetwork
     """Initialize this user with the given address and no connections to any movies."""
     center_node = net.add_movie('all movies', 0)
     for c in characteristics:
-        net.add_movie(c, characteristics[c])
-        net.add_neighbour(center_node.name, c)
+        new_movie = net.add_movie(c, characteristics[c])
+        net.add_neighbour(center_node.name, new_movie.name)
     return net
