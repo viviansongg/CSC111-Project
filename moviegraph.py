@@ -47,7 +47,7 @@ class MovieNetwork:
         self.movies[item] = Movie(item, score)
         return movie
 
-    def add_neighbour(self, item1: str, item2: stry) -> None:
+    def add_neighbour(self, item1: str, item2: str) -> None:
         """Add an edge between the two vertices with the given items in this graph.
 
         Raise a ValueError if item1 or item2 do not appear as vertices in this graph.
@@ -58,8 +58,8 @@ class MovieNetwork:
         if item1 in self.movies and item2 in self.movies:
             v1 = self.movies[item1]
             v2 = self.movies[item2]
-            v1.neighbours[item2] = v2
-            v2.neighbours[item1] = v1
+            v1.neighbours[item2] = v2.score
+            v2.neighbours[item1] = v1.score
         else:
             raise ValueError
 
