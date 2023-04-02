@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import *
-
+import random
 # creates main root window
 main = tk.Tk()
 main.geometry('500x700')
@@ -65,7 +65,8 @@ def choice_q_1(answer: str) -> int:
     elif answer == 'Music':
         return 12
     else:
-        return 13
+        lst_0 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        return random.choice(lst_0)
 
 drop_box.pack(anchor='w')
 
@@ -87,7 +88,9 @@ def choices_q_2(answer: str) -> int:
     elif answer == '>= 1h 40 min':
         return 200
     else:
-        return 300
+        lst = [100, 200]
+        return random.choice(lst)
+
 
 # Question 3:
 choice_q_3 = StringVar()
@@ -104,10 +107,11 @@ def choices_q_3(answer: str) -> int:
         return 1000
     elif answer == 'Mediocre: 5-7.9':
         return 2000
-    elif answer == 'Low: 1-4.9':
+    elif answer == 'Low: 1-4':
         return 3000
     else:
-        return 4000
+        lst_1 = [1000, 2000, 3000]
+        return random.choice(lst_1)
 
 # Question 4
 choice_q_4 = StringVar()
@@ -125,7 +129,9 @@ def choices_q_4(answer: str) -> int:
     elif answer == 'Another Language':
         return 20000
     else:
-        return 30000
+        lst_2 = [10000, 20000]
+        return random.choice(lst_2)
+
 
 # Question 5
 choice_q_5 = StringVar()
@@ -142,10 +148,12 @@ def choices_q_5(answer: str) -> int:
         return 100000
     elif answer == '2016-2020':
         return 200000
-    elif answer =='<2016':
+    elif answer == '<2016':
         return 300000
     else:
-        return 400000
+        lst_3 = [100000, 200000, 300000]
+        return random.choice(lst_3)
+
 
 def clicked():
     """When the done button is clicked switch the text to loading."""
