@@ -35,7 +35,7 @@ def calculate_score(movie_file: str) -> dict:
             if row[0] == 'en':
                 answer4 = 10000
             else:
-                answer4 = 2000
+                answer4 = 20000
 
             # question 5
             if row[2][:4] >= '2021':
