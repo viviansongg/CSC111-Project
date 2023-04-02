@@ -1,4 +1,7 @@
 # CSC111 Project - Python libraries used in our MovieFinder program
 
+# Testing and code checking
+python-ta~=2.4.2
+
 # Graphics and Visualizing the Program
 tkinder
