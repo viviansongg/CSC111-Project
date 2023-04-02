@@ -147,11 +147,9 @@ def choices_q_5(answer: str) -> int:
     else:
         return 400000
 
-      
 def clicked():
     """When the done button is clicked switch the text to loading."""
     quit_when_done.config(text='LOADING...')
-    
     print([choice.get()] + [choice_q_2.get()] + [choice_q_3.get()] + [choice_q_4.get()]
           + [choice_q_5.get()])
     print(choice_q_1(choice.get()) + choices_q_2(choice_q_2.get()) + choices_q_3(choice_q_3.get())
