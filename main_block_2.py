@@ -1,23 +1,29 @@
-import csv
-
-def reader1(file: str) -> list[list]:
-    """Take the csv file and return a list of all the movies and their characteristics."""
-    with open(file, encoding='cp1252') as csv_file:
-        reader = csv.reader(csv_file)
-        lst_of_movies = []
-        for row in reader:
-            movie_lst = []
-            movie_lst.append(row[1])
-            movie_lst.append(row[5].strip("[']"))
-            movie_lst.append(int(row[4]))
-            movie_lst.append(float(row[3]))
-            movie_lst.append(row[0])
-            movie_lst.append(row[2])
-            lst_of_movies.append(movie_lst)
-        return lst_of_movies
+""" The function in this file returns the movie that the user should watch based on the already existing movies
+in the graph, by comparing each movie score to the user score. """
+import random
+import moviegraph
 
 
-#def movie_score(movies: list[list]) -> dict[str,int]:
-#    """Returns the movie and their score."""
-#    dict_so_far = {}
-#    for movie in movies:
+def watch_next(network: moviegraph.MovieNetwork, user_score: int) -> str:
+    """Returns an ideal movie to watch next based on the smallest difference between the movie score and the user
+    score."""
+
+    dict_so_far = {}
+    for movie in network.movies:
+        dict_so_far[movie] = abs(network.movies[movie].score - user_score)
+    min_diff = min([dict_so_far[movie] for movie in dict_so_far])
+
+    list_of_possible_movies = []
+    for movie1 in dict_so_far:
+        if dict_so_far[movie1] == min_diff:
+            list_of_possible_movies.append(movie1)
+    if len(list_of_possible_movies) == 1:
+        movie_to_watch = list_of_possible_movies.pop()
+        network.add_movie_or_user('user', user_score, 'users')
+        network.add_neighbour(movie_to_watch, 'user', 'users')
+        return movie_to_watch
+    else:
+        movie_to_watch = random.choice(list_of_possible_movies)
+        network.add_movie_or_user('user', user_score, 'users')
+        network.add_neighbour(movie_to_watch, 'user', 'users')
+        return movie_to_watch
